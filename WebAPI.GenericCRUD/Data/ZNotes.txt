@@ -32,5 +32,7 @@ GO
 
 
 WebAPI.GenericCRUD
+E:\gitClone\TMP_3\API_Pub\GenericCRUD\publish
 https://localhost:5001/swagger/index.html
+https://localhost:81/api/Branch/GetAllBranches
 

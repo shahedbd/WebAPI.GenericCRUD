@@ -15,6 +15,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+});
+
 
 
 var app = builder.Build();
@@ -26,5 +31,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapControllers();
+app.UseCors("Open");
 app.Run();
 

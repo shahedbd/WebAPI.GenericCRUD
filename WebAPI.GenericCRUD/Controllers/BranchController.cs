@@ -49,7 +49,7 @@ namespace WebAPI.GenericCRUD.Controllers
             return Ok(await _branchRepository.SaveChangesAsync());
         }
         [HttpDelete]
-        [Route("DeleteBranch")]
+        [Route("DeleteBranch/{id}")]
         public async Task<IActionResult> DeleteBranch(Int64 id)
         {
             await _branchRepository.Delete(id);
